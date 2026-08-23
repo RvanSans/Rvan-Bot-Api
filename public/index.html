@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RvanAPI - REST API for WhatsApp Bot</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="https://cdn.phototourl.com/free/2026-08-23-37b4ca75-6963-4795-a1b2-d076569c7498.png" alt="RvanAPI Logo" class="logo">
+                <span>RvanAPI</span>
+            </div>
+            <div class="nav-menu">
+                <a onclick="navigateTo('home')" class="nav-link active" id="navHome">Home</a>
+                <a onclick="navigateTo('docs')" class="nav-link" id="navDocs">Docs</a>
+                <a onclick="navigateTo('pricing')" class="nav-link" id="navPricing">Pricing</a>
+                <a onclick="navigateTo('auth')" class="nav-link" id="navAuth">Dashboard</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ─── HALAMAN HOME ─── -->
+    <section id="pageHome" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <span class="badge">🚀 v1.0.0</span>
+                <h1>Modern REST API<br>for <span class="gradient-text">WhatsApp Bot</span></h1>
+                <p>Downloader, AI, Weather, Earthquake, Translate, QR Code & more — all in one powerful API.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="navigateTo('auth')">Get Started →</button>
+                    <button class="btn btn-outline" onclick="navigateTo('docs')">Documentation</button>
+                </div>
+                <div class="hero-stats">
+                    <div><span>10+</span> Endpoints</div>
+                    <div><span>100%</span> Uptime</div>
+                    <div><span>Free</span> Tier</div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="code-title">example.js</span>
+                    </div>
+                    <div class="code-body">
+                        <pre><span class="kw">const</span> axios = <span class="fn">require</span>(<span class="str">'axios'</span>);
+
+<span class="kw">const</span> api = axios.<span class="fn">create</span>({
+  baseURL: <span class="str">'https://rvan-api.onrender.com'</span>,
+  params: { apikey: <span class="str">'YOUR_API_KEY'</span> }
+});
+
+<span class="kw">const</span> { data } = <span class="kw">await</span> api.<span class="fn">get</span>(<span class="str">'/api/quote'</span>);
+<span class="fn">console</span>.<span class="fn">log</span>(data); <span class="comment">// { quote: "..." }</span></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FITUR -->
+        <div class="features-section">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2>Everything you need</h2>
+                <p>Complete API for your WhatsApp bot development</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>Universal Downloader</h3>
+                    <p>YouTube, TikTok, Instagram, Facebook, Twitter</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Chat</h3>
+                    <p>Powered by Google Gemini</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌤️</div>
+                    <h3>Weather & Earthquake</h3>
+                    <p>Real-time data from BMKG</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Translate</h3>
+                    <p>100+ languages supported</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>QR Code Generator</h3>
+                    <p>Instant QR creation</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Quote & Doa</h3>
+                    <p>Daily inspiration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── HALAMAN DOCS ─── -->
+    <section id="pageDocs" class="page">
+        <div class="docs-container">
+            <h1>Documentation</h1>
+            <p class="docs-subtitle">Complete reference for RvanAPI endpoints</p>
+
+            <div class="docs-grid">
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/quote</h3>
+                    <p>Get random inspirational quote</p>
+                    <code>?apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/doa</h3>
+                    <p>Get random prayer</p>
+                    <code>?apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/gempa</h3>
+                    <p>Latest earthquake info</p>
+                    <code>?apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/cuaca</h3>
+                    <p>Weather by city</p>
+                    <code>?kota=Jakarta&apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/translate</h3>
+                    <p>Translate text</p>
+                    <code>?text=Hello&target=id&apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/qrcode</h3>
+                    <p>Generate QR code</p>
+                    <code>?text=Hello&apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/ai</h3>
+                    <p>AI chat with Gemini</p>
+                    <code>?text=Hello&apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/searchimage</h3>
+                    <p>Search images</p>
+                    <code>?q=kucing&apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/download</h3>
+                    <p>Universal media downloader</p>
+                    <code>?url=https://youtu.be/...&apikey=YOUR_KEY</code>
+                </div>
+                <div class="docs-card">
+                    <span class="method get">GET</span>
+                    <h3>/api/tiktok</h3>
+                    <p>TikTok downloader</p>
+                    <code>?url=https://vt.tiktok.com/...&apikey=YOUR_KEY</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── HALAMAN PRICING ─── -->
+    <section id="pagePricing" class="page">
+        <div class="pricing-container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2>Choose your plan</h2>
+                <p>Start free, upgrade as you grow</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <div class="price">Rp0</div>
+                        <p>Perfect for testing</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✅ 10 requests/day</li>
+                        <li>✅ Basic endpoints</li>
+                        <li>❌ Custom API Key</li>
+                        <li>❌ Premium support</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="navigateTo('auth')">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="price">Rp10K</div>
+                        <p>For serious developers</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✅ 1.000 requests/day</li>
+                        <li>✅ All endpoints</li>
+                        <li>✅ Custom API Key</li>
+                        <li>✅ Premium support</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="navigateTo('auth')">Subscribe</button>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>VIP</h3>
+                        <div class="price">Rp25K</div>
+                        <p>Unlimited power</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✅ Unlimited requests</li>
+                        <li>✅ All endpoints</li>
+                        <li>✅ Custom API Key</li>
+                        <li>✅ Priority support</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="navigateTo('auth')">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── HALAMAN AUTH ─── -->
+    <section id="pageAuth" class="page">
+        <div class="auth-container">
+            <div id="authPage">
+                <div class="auth-header">
+                    <h2>🔐 Welcome Back</h2>
+                    <p>Login or create your account</p>
+                </div>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('register')" id="tabRegister">Register</button>
+                    <button class="tab-btn" onclick="switchTab('login')" id="tabLogin">Login</button>
+                </div>
+                <div id="registerForm">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="regUsername" placeholder="Choose a username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="regPassword" placeholder="Create a password">
+                    </div>
+                    <div class="form-group">
+                        <label>WhatsApp Number</label>
+                        <input type="text" id="regWa" placeholder="6281234567890">
+                    </div>
+                    <button class="btn btn-primary full-width" onclick="register()">Create Account</button>
+                </div>
+                <div id="loginForm" class="hidden">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="loginUsername" placeholder="Your username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="Your password">
+                    </div>
+                    <button class="btn btn-primary full-width" onclick="login()">Login</button>
+                </div>
+                <div id="authMessage" class="message-box hidden"></div>
+            </div>
+
+            <!-- DASHBOARD -->
+            <div id="dashboardPage" class="hidden">
+                <div class="dashboard-container">
+                    <div class="dashboard-header">
+                        <div class="user-info">
+                            <div class="avatar" id="userAvatar">👤</div>
+                            <div>
+                                <h3 id="userName">User</h3>
+                                <span class="user-role">Free Plan</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline small" onclick="logout()">Logout</button>
+                    </div>
+
+                    <div class="dashboard-actions">
+                        <button class="btn btn-primary small" onclick="regenerateKey()">🔄 Regenerate API Key</button>
+                        <button class="btn btn-outline small" onclick="refreshStats()">📊 Refresh Stats</button>
+                    </div>
+
+                    <div class="stats-row" id="statsRow">
+                        <div class="stat-item">
+                            <span class="stat-value" id="statPlan">Free</span>
+                            <span class="stat-label">Plan</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="statRequests">0</span>
+                            <span class="stat-label">Total Requests</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="statSince">-</span>
+                            <span class="stat-label">Member Since</span>
+                        </div>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-value" id="apiKeyDisplay">••••••••</span>
+                            <span class="stat-label">API Key</span>
+                            <button class="btn-icon" onclick="copyApiKey()" title="Copy API Key">📋</button>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="requestCount">0</span>
+                            <span class="stat-label">Requests Today</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">Free</span>
+                            <span class="stat-label">Plan</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="dash-card" onclick="testAPI('/api/quote')">
+                            <span>📖</span>
+                            <span>Quote</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/doa')">
+                            <span>📿</span>
+                            <span>Doa</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/gempa')">
+                            <span>🌋</span>
+                            <span>Gempa</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/cuaca?kota=Jakarta')">
+                            <span>🌤️</span>
+                            <span>Cuaca</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/translate?text=Hello&target=id')">
+                            <span>🔄</span>
+                            <span>Translate</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/qrcode?text=Halo')">
+                            <span>📱</span>
+                            <span>QR Code</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/ai?text=Halo')">
+                            <span>🤖</span>
+                            <span>AI Chat</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/searchimage?q=kucing')">
+                            <span>🖼️</span>
+                            <span>Search Image</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/download?url=https://youtu.be/dQw4w9WgXcQ')">
+                            <span>📥</span>
+                            <span>Download</span>
+                        </div>
+                        <div class="dash-card" onclick="testAPI('/api/tiktok?url=https://vt.tiktok.com/xxx')">
+                            <span>🎵</span>
+                            <span>TikTok</span>
+                        </div>
+                    </div>
+
+                    <div class="custom-test">
+                        <input type="text" id="customEndpoint" placeholder="/api/quote?apikey=...">
+                        <button class="btn btn-primary small" onclick="testCustom()">Test</button>
+                    </div>
+
+                    <div class="result-box" id="resultBox">
+                        <pre id="resultText">💡 Tap a card to test the endpoint</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="https://cdn.phototourl.com/free/2026-08-23-37b4ca75-6963-4795-a1b2-d076569c7498.png" alt="RvanAPI Logo" class="footer-logo">
+                <span>RvanAPI</span>
+                <p>Modern REST API for WhatsApp Bot</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Product</h4>
+                    <a onclick="navigateTo('home')">Home</a>
+                    <a onclick="navigateTo('docs')">Documentation</a>
+                    <a onclick="navigateTo('pricing')">Pricing</a>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <a href="https://wa.me/6285394408301" target="_blank">WhatsApp</a>
+                    <a href="https://github.com/RvanSans/Rvan-Bot-API" target="_blank">GitHub</a>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 RvanAPI. Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- ─── TOAST NOTIFICATION ─── -->
+    <div id="toast" class="toast hidden"></div>
+
+    <!-- ─── LOADING SPINNER ─── -->
+    <div id="loadingSpinner" class="spinner-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

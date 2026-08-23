@@ -1,0 +1,41 @@
+{
+  "rvan": {
+    "username": "rvan",
+    "password": "$2b$10$xfRRUQCI.x1NkIENHjv7Z.uKSvW5uUeZiHhv3JH/fQqFaDh23OH..",
+    "wa": "085394408301",
+    "apiKey": "55e3e6368b56466d",
+    "createdAt": "2026-08-23T06:58:49.634Z"
+  },
+  "cxcs": {
+    "username": "cxcs",
+    "password": "$2b$10$.c7LHPtD9JuhYInBG93sZus5KwLqV3xolhVis6hC1oer4EY5R/SJy",
+    "wa": "dsadas",
+    "apiKey": "1991ac72f6be408b",
+    "createdAt": "2026-08-23T07:56:11.554Z"
+  },
+  "asd": {
+    "username": "asd",
+    "password": "$2b$10$SdLmxzrbChS.Io6XlEste.cxUtf/wh2xW512aa8KptyWfmO.ip7pq",
+    "wa": "sdad",
+    "apiKey": "5fc816b38f824397",
+    "createdAt": "2026-08-23T08:14:12.477Z"
+  },
+  "sda": {
+    "username": "sda",
+    "password": "$2b$10$S7mGu4s/rzR3CL5P6vf6ueziVLBEMvhq85HTHT/VV3YYQTOohYcM6",
+    "wa": "dasdas",
+    "apiKey": "9963f089d21a478e",
+    "createdAt": "2026-08-23T08:17:23.117Z"
+  },
+  "asda": {
+    "username": "asda",
+    "password": "$2b$10$O582Zy.WgHliE1gamrJs7ONDvtAfOf3SqMrjESrxwjKSMESNHbN4a",
+    "wa": "0000000000",
+    "apiKey": "a9d6e47e4aa24887",
+    "plan": "free",
+    "createdAt": "2026-08-23T08:21:12.396Z",
+    "requests": 0,
+    "lastRequest": null,
+    "lastLogin": "2026-08-23T08:21:16.686Z"
+  }
+}
