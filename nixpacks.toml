@@ -1,8 +1,9 @@
 [phases.setup]
-nixPkgs = ["nodejs", "python3", "pip"]
-
+nixPkgs = ["nodejs", "python3", "python3Packages.pip"]
+ 
 [phases.install]
 cmds = [
+  "ln -sf $(which python3) /usr/local/bin/python",
   "npm install",
-  "pip install --break-system-packages -U yt-dlp"
+  "python3 -m pip install --break-system-packages -U yt-dlp"
 ]
