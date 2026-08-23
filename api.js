@@ -29,7 +29,6 @@ app.get('/api', (req, res) => {
             '/api/doa',
             '/api/cuaca',
             '/api/gempa',
-            '/api/translate',
             '/api/qrcode',
             '/api/tiktok?url=...',
             '/api/download?url=...',
