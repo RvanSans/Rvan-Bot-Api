@@ -15,7 +15,6 @@ require('./routes/quote')(app);
 require('./routes/doa')(app);
 require('./routes/cuaca')(app);
 require('./routes/gempa')(app);
-require('./routes/translate')(app);
 require('./routes/qrcode')(app);
 require('./routes/downloader')(app);
 require('./routes/ai')(app);
